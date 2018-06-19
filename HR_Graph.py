@@ -19,6 +19,14 @@ for x in sorted(HR_Dict['objects'][0]['rows']):
 x_list = []
 y_list = []
 
+start_date = datetime(2018, 2, 16)
+#end_date = datetime(2018, 2, 17)
+end_date = datetime.today()
+
+for key in list(HR_final.keys()):
+    if key < start_date or key > end_date:  #
+        del HR_final[key]
+
 for value in HR_final:
     if HR_final[value] != 0:
         x_list.append(value)
